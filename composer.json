@@ -1,0 +1,19 @@
+{
+  "name": "lasalle/mvc-intro",
+  "description": "An introduction to the MVC pattern in PHP",
+  "type": "project",
+  "license": "MIT License",
+  "require": {
+    "nikic/fast-route": "^1.3",
+    "twig/twig": "^3.0",
+    "slim/slim": "4.*",
+    "slim/psr7": "^1.0",
+    "php-di/slim-bridge": "^3.0",
+    "slim/twig-view": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "SallePW\\": "src/"
+    }
+  }
+}
