@@ -8,4 +8,6 @@ use SallePW\Model\Task;
 interface TaskRepository
 {
     public function save(Task $task): void;
+
+    public function getAll(): array;
 }

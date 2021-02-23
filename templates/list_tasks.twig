@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block title %}List Tasks{% endblock %}
+
+{% block content %}
+    <ol>
+        {% for task in tasks %}
+            <li>Title: {{ task.title }}</li>
+            <ul>
+                <li>Content: {{ task.content | slice(0, 50) }}</li>
+                <li>Created at: {{ task.created_at }}</li>
+            </ul>
+        {% endfor %}
+    </ol>
+{% endblock %}

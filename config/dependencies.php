@@ -3,12 +3,14 @@ declare(strict_types=1);
 
 use Psr\Container\ContainerInterface;
 use SallePW\Controller\CreateTaskController;
+use SallePW\Controller\CreateTaskFormGuiController;
+use SallePW\Controller\ListTasksController;
 use SallePW\Model\Repository\TaskRepository;
 use SallePW\Model\UseCase\CreateTaskUseCase;
+use SallePW\Model\UseCase\ListTasksUseCase;
 use SallePW\Repository\MysqlTaskRepository;
 use SallePW\Repository\PDOSingleton;
 use Slim\Views\Twig;
-use SallePW\Controller\CreateTaskFormGuiController;
 
 function addDependencies(ContainerInterface $container): void {
     $container->set(
@@ -44,7 +46,6 @@ function addDependencies(ContainerInterface $container): void {
         }
     );
 
-
     $container->set(
         CreateTaskUseCase::class,
         function (ContainerInterface $c) {
@@ -54,9 +55,25 @@ function addDependencies(ContainerInterface $container): void {
     );
 
     $container->set(
+        ListTasksUseCase::class,
+        function (ContainerInterface $c) {
+            $listTasksUseCase = new ListTasksUseCase($c->get(TaskRepository::class));
+            return $listTasksUseCase;
+        }
+    );
+
+    $container->set(
         CreateTaskController::class,
         function (ContainerInterface $c) {
             $controller = new CreateTaskController($c->get(CreateTaskUseCase::class));
+            return $controller;
+        }
+    );
+
+    $container->set(
+        ListTasksController::class,
+        function (ContainerInterface $c) {
+            $controller = new ListTasksController($c->get(ListTasksUseCase::class), $c->get("view"));
             return $controller;
         }
     );
