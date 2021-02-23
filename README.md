@@ -8,6 +8,7 @@ To follow the exercise, you need a development environment up and running.
 
 We will use the usual `local-environment` for the project. This time, the environmient is contained in the repository you are in. 
 Remember to start your docker services for the project running `docker-compose up -d` (inside the `mvc-intro` folder).
+
 If you see an error stating that there is a conflict between container names or ports, it might be that you have another `local-environment` instance running.
 This happens because the actual container names you are using are the same for all your `local-environment` instances; we have only changed the name of this repository (folder) to `mvc-intro`.
 Accordingly, shutdown all other instances by navigating to the proper folder and executing `docker-compose down`.
