@@ -88,7 +88,7 @@ Be aware that the service must receive an instance of a class that implements th
 
 Use the following SQL to generate the table to store all the tasks:
 
-```
+```sql
 CREATE TABLE `task` (
   `id` INT(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(255) NOT NULL DEFAULT '',
