@@ -16,7 +16,7 @@ final class CreateTaskFormGuiController
         $this->twig = $twig;
     }
 
-    public function getFormAction(RequestInterface $request, ResponseInterface $response)
+    public function apply(RequestInterface $request, ResponseInterface $response)
     {
         return $this->twig->render($response, 'create_task.twig');
     }

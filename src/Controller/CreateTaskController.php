@@ -29,7 +29,7 @@ class CreateTaskController
 
         $task = new Task(null, $title, $content, new \DateTime(), new \DateTime());
 
-        $this->createTaskUseCase->execute($task);
+        $this->createTaskUseCase->apply($task);
 
         $response = $response->withAddedHeader("Location", "/task")->withStatus(303);
 

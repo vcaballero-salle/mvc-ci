@@ -15,7 +15,7 @@ final class CreateTaskUseCase
         $this->repository = $repository;
     }
 
-    public function execute(Task $task)
+    public function apply(Task $task): void
     {
         $this->repository->save($task);
     }
