@@ -1,6 +1,6 @@
 # MVC - basics
 
-In this exercise will develop a simple PHP application following the MVC pattern.
+In this exercise we will implement a simple PHP application following the MVC pattern.
 
 ## Prerequisites
 
