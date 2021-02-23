@@ -90,11 +90,11 @@ Use the following SQL to generate the table to store all the tasks:
 
 ```
 CREATE TABLE `task` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(20) NOT NULL,
-  `content` varchar(255) NOT,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
+  `id` INT(11) unsigned NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(255) NOT NULL DEFAULT '',
+  `content` VARCHAR(255) NOT NULL DEFAULT '',
+  `created_at` DATETIME NOT NULL,
+  `updated_at` DATETIME NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
