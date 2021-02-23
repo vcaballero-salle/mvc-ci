@@ -7,13 +7,13 @@ use DateTime;
 
 final class Task
 {
-    private int $id;
+    private ?int $id;
     private string $title;
     private string $content;
     private DateTime $createdAt;
     private DateTime $updatedAt;
 
-    public function __construct(int $id, string $title, string $content, DateTime $createdAt, DateTime $updatedAt)
+    public function __construct(?int $id, string $title, string $content, DateTime $createdAt, DateTime $updatedAt)
     {
         $this->id = $id;
         $this->title = $title;

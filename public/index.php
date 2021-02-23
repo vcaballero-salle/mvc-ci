@@ -7,6 +7,11 @@ use DI\Container;
 use SallePW\ErrorHandler\HttpErrorHandler;
 use Slim\Factory\AppFactory;
 use Slim\Views\TwigMiddleware;
+use Symfony\Component\Dotenv\Dotenv;
+
+$dotenv = new Dotenv();
+
+$dotenv->load(__DIR__ . '/../.env');
 
 $container = new Container();
 
@@ -20,6 +25,8 @@ $app = AppFactory::create();
 
 $callableResolver = $app->getCallableResolver();
 $responseFactory = $app->getResponseFactory();
+
+$app->addBodyParsingMiddleware();
 
 $app->add(TwigMiddleware::createFromContainer($app));
 
