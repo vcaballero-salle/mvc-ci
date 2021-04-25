@@ -1,8 +1,11 @@
 <?php
 
-use SallePW\Model\Task;
+namespace SallePW\Model;
 
-class TaskTest extends PHPUnit\Framework\TestCase
+use DateTime;
+use PHPUnit\Framework\TestCase;
+
+class TaskTest extends TestCase
 {
     public function testCanCreateATask()
     {
