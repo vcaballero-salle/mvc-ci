@@ -6,7 +6,7 @@ In this exercise we will implement a simple PHP application following the MVC pa
 
 To follow the exercise, you need a development environment up and running.
 
-We will use the usual `local-environment` for the project. This time, the environmient is contained in the repository you are in. 
+We will use the usual `local-environment` for the project. This time, the environment is contained in the repository you are in.
 Remember to start your docker services for the project running `docker-compose up -d` (inside the `mvc-intro` folder).
 
 If you see an error stating that there is a conflict between container names or ports, it might be that you have another `local-environment` instance running.
