@@ -3,7 +3,9 @@
 {% block title %}Add Task{% endblock %}
 
 {% block content %}
-    <input type="text" name="title" placeholder="title">
-    <input type="text" name="content" placeholder="content">
-    <input type="submit" value="Add task">
+    <form action="/task" method="POST">
+        <input type="text" name="title" placeholder="title">
+        <input type="text" name="content" placeholder="content">
+        <input type="submit" value="Add task">
+    </form>
 {% endblock %}
